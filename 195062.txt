@@ -1,0 +1,101 @@
+1) LalkovKire ( username ), installed. 
+
+2) Repository default branch changed from main to master.
+
+3) Kreirav remote repo preku GitHub imenuvan  SI_2023_lab1_195062, namesten private.
+
+4) Commands : 
+
+> cd C:\Users\admin\Documents\SI
+> mkdir SI_2023_lab1_195062 ( local repo )
+> cd C:\Users\admin\Documents\SI\SI_2023_lab1_195062
+> git init ( initalizaing the repo ) - "Initialized empty Git repository in C:..."
+
+5)
+> git remote add origin https://github.com/LalkovKire/SI_2023_lab1_195062.git
+( povrzuvame lokalno so remote, pravime remote connection narecen origin pomegu dvete repo ).
+
+6)
+> echo "Kire Lalkov, 195062" >> README.md ( kreirame content name,surname and index koj go zacuvuvame kako README.md ).
+> git add README.md  ( go stavame vo staging area ).
+> git commit -m "Initial commit" ( pravime commit na fileot so message Initial commit )
+
+7) 
+> git add SILab1.java  ( dodavme SILab1.java vo staging area )
+"warning: in the working copy of 'SILab1.java', LF will be replaced by CRLF the next time Git touches it" 
+> git commit -m "Add java class" ( pravime commit na istata )
+
+8) 
+> git fetch ( Rabotime samostojno taka da nema potreba no kako za dobra praktika pravam fetch )
+> git push -u origin master ( Site commiti koj se na localnoto master branch gi pushnuvame vo remote repoto
+Stavame -u za priot push za da ja specificirame upstream branchot ).
+
+9) 
+> git branch bug1
+> git branch bug2
+> git branch bug3 ( Kreirame 3 branches soodvetno ).
+
+10) git checkout bug1 ( Se prefrlame od branch master for branch bug1 ).
+
+11) Ja popravame greskata ( i < n ). 
+> git status (  modified:   SILab1.java )
+> git add SILab1.java   ( promenite pak trebe da gi dodadime vo staging area ) 
+> git commit -m "Fix wrong loop for reading" ( pravime commit na popravkata ).
+ 
+12)
+> git checkout bug2
+
+13) Ja popravame greskata ( el != 0 )
+> git status (  modified:   SILab1.java )
+> git add SILab1.java 
+> git commit -m "Fix wrong condition in filterOddNumbers"
+
+14)
+> git checkout bug3
+
+15) Ja popravame greskata ( el += broj ) 
+> git add SILab1.java
+> git commit -m "Fix method sumEvenNumbers"
+
+16)
+> git push --all ( gi pushame site branchovi na remote repoto zaedno so site nivni commiti ) 
+
+17) 
+> git checkout master ( se prefrlame na branch master )
+
+18)
+> git merge bug1 ( pravime merge na grankata bug1 so master, se koristi FastForward , imame 1 insertion 1 deletion )
+
+19) 
+> git push --all ( pravime push again, vo remote repoto ke se napravi merge promenite).
+
+20)
+> git merge bug2 ( pravime merge na bug2 so master, se koristi ORT strategy, 1 insertion 1 deletion ).
+
+21)
+> git push --all 
+
+22)
+> git checkout bug3
+
+23)
+> git rebase master ( gi dodavame promenite vrz posledniot commit na master branch )
+(Successfully rebased and updated refs/heads/bug3.)
+
+24) 
+> git checkout master 
+
+25)
+> git merge bug3 
+
+26)
+> git push --all --force ( mora force ) 
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 267 bytes | 267.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/LalkovKire/SI_2023_lab1_195062.git
+   42d81b3..0aea719  bug3 -> bug3
+
+
+ 
